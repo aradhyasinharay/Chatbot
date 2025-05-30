@@ -1,0 +1,57 @@
+import json
+
+# Read the plain text file
+with open('input.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+
+# Convert lines to dictionary
+data = {}
+for line in lines:
+    if ':' in line:
+        key, value = line.strip().split(':', 1)
+        data[key.strip()] = value.strip()
+
+# Show the dictionary
+print("Extracted Data:")
+print(data)
+
+# Save it as a JSON file
+with open('output.json', 'w', encoding='utf-8') as json_file:
+    json.dump(data, json_file, indent=4)
+
+print("\n✅ Saved as output.json")
+
+
+#in place of "input.text"put the copied file path of your text document.
+#The text document should be in the same directory as of your Jupyter Notebook
+
+
+
+IF "UTF-8" CAN'T BE ENCODED, THEN WE WILL USE THE CODE BELOW
+
+
+
+
+
+import json
+
+# Read the plain text file with a fallback encoding
+with open('Chatbot Q&A for both HT & LT Customers.txt', 'r', encoding='ISO-8859-1') as file:
+    lines = file.readlines()
+
+# Convert lines to dictionary
+data = {}
+for line in lines:
+    if ':' in line:
+        key, value = line.strip().split(':', 1)
+        data[key.strip()] = value.strip()
+
+# Show the dictionary
+print("Extracted Data:")
+print(data)
+
+# Save it as a JSON file
+with open('output.json', 'w', encoding='utf-8') as json_file:
+    json.dump(data, json_file, indent=4)
+
+print("\n✅ Saved as output.json")
